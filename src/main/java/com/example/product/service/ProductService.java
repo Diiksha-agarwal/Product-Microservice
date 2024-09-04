@@ -15,4 +15,6 @@ public interface ProductService {
 
     public ProductDTO getById(String pid);
     public boolean addSeller(String pId, Seller seller);
+
+    boolean updateStock(String pId, String sId, int quantity);
 }
