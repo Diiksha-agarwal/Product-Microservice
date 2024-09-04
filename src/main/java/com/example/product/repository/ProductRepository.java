@@ -9,4 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface ProductRepository extends MongoRepository<Product,String> {
+    @Query("{ 'pName': { $regex: ?0, $options: 'i' } }")
+    Optional<Product> findByPNameIgnoreCase(String name);
 }

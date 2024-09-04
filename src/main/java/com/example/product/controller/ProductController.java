@@ -53,4 +53,12 @@ public class ProductController {
         }
         return new ResponseEntity<>(new APIResponse<>(false,"product not found"),HttpStatus.BAD_REQUEST);
     }
+    @CrossOrigin
+    @PutMapping("/updateStock")
+    public ResponseEntity<APIResponse<String>> updateStock(String pId, String sId,int qty){
+        if(productService.updateStock(pId,sId,qty)){
+            return new ResponseEntity<>(new APIResponse<>("updated stock"),HttpStatus.OK);
+        }
+        return new ResponseEntity<>(new APIResponse<>(false,"something went wrong"),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }

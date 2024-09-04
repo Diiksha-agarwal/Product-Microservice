@@ -7,4 +7,5 @@ public class Seller {
     private String sId;
     private int stock;
     private double price;
+    private String sName;
 }

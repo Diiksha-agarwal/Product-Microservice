@@ -9,4 +9,5 @@ public class ProductDescDTO {
     private String description;
     private String image;
     private double minPrice;
+    private String minSId;
 }
